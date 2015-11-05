@@ -1,4 +1,4 @@
-# NativeStackBlur
+# InkPageIndicator
 InkPageIndicator from Plaid https://github.com/nickbutcher/plaid. Works with API 21+ (5.0+)
 
 ![Sample Gif](http://fat.gfycat.com/JitteryGenuineFugu.gif)
