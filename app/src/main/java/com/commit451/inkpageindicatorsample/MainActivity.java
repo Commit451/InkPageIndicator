@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         ArrayList<String> images = new ArrayList<>();
         images.add("http://minkmgmt.com/wp-content/uploads/2011/11/Papercscape-1-1024x768.jpg");
         images.add("http://static1.squarespace.com/static/51609147e4b0715db61d32b6/521b97cee4b05f031fd12dde/5519e33de4b06a1002802805/1431718693701/?format=1500w");
-        images.add("http://img3.goodfon.su/original/1024x768/4/ca/android-5-0-lollipop-green-4223.jpg");
+        images.add("http://minkmgmt.com/wp-content/uploads/2011/11/Papercscape-1-1024x768.jpg");
         viewPager.setAdapter(new ImageAdapter(images));
         InkPageIndicator inkPageIndicator = (InkPageIndicator) findViewById(R.id.ink_pager_indicator);
         inkPageIndicator.setViewPager(viewPager);
