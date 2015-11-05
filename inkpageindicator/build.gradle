@@ -8,8 +8,8 @@ android {
     defaultConfig {
         minSdkVersion 21
         targetSdkVersion 23
-        versionCode 1
-        versionName "1.0"
+        versionCode 101
+        versionName "1.0.1"
     }
     buildTypes {
         release {
@@ -34,7 +34,7 @@ publish {
     userOrg = 'commit451'
     groupId = 'com.commit451'
     artifactId = 'inkpageindicator'
-    version = '1.0.0'
+    version = '1.0.1'
     description = 'InkPageIndicator from Plaid https://github.com/nickbutcher/plaid '
     website = 'https://github.com/Commit451/InkPageIndicator'
     issueTracker = "https://github.com/Commit451/InkPageIndicator/issues"
