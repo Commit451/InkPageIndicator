@@ -30,13 +30,13 @@
         <android.support.v4.view.ViewPager
             android:id="@+id/image_view_pager"
             android:layout_width="match_parent"
-            android:layout_height="300dp"/>
+            android:layout_height="match_parent"/>
 
         <com.commit451.inkpageindicator.InkPageIndicator
             android:id="@+id/ink_pager_indicator"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="8dp"/>
+            android:layout_margin="16dp"/>
 
     </FrameLayout>
 

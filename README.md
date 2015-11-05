@@ -1,5 +1,5 @@
 # NativeStackBlur
-InkPageIndicator from Plaid https://github.com/nickbutcher/plaid. Works with API 19+ (4.4+)
+InkPageIndicator from Plaid https://github.com/nickbutcher/plaid. Works with API 21+ (5.0+)
 
 [![Build Status](https://travis-ci.org/Commit451/InkPageIndicator.svg?branch=master)](https://travis-ci.org/Commit451/InkPageIndicator)
 
