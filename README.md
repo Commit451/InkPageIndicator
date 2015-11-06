@@ -1,5 +1,5 @@
 # InkPageIndicator
-InkPageIndicator from Plaid https://github.com/nickbutcher/plaid. Works with API 21+ (5.0+)
+InkPageIndicator from Plaid https://github.com/nickbutcher/plaid. Works with API 19+ (4.4+)
 
 ![Sample Gif](http://fat.gfycat.com/JitteryGenuineFugu.gif)
 
@@ -10,7 +10,7 @@ Easily reference the library in your Android projects using this dependency in y
 
 ```Gradle
 dependencies {
-    compile 'com.commit451:inkpageindicator:1.0.1'
+    compile 'com.commit451:inkpageindicator:1.0.2'
 }
 ```
 
