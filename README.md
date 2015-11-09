@@ -43,6 +43,11 @@ The library also supports styling in XML:
   app:currentPageIndicatorColor="@color/white"/>
 ```
 
+# Contributions
+Please make pull requests as you see fit and log issues so that others can benefit from knowing the library and its issues. 
+
+Special thanks to @nickbutcher for the original code and @hzsweers for backporting it to 4.4+
+
 License
 --------
 
