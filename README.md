@@ -3,7 +3,7 @@ InkPageIndicator from [Plaid](https://github.com/nickbutcher/plaid). Works with 
 
 ![Sample Gif](http://fat.gfycat.com/JitteryGenuineFugu.gif)
 
-[![Build Status](https://travis-ci.org/Commit451/InkPageIndicator.svg?branch=master)](https://travis-ci.org/Commit451/InkPageIndicator)
+[![Build Status](https://travis-ci.org/Commit451/InkPageIndicator.svg?branch=master)](https://travis-ci.org/Commit451/InkPageIndicator) [![](https://jitpack.io/v/Commit451/InkPagerIndicator.svg)](https://jitpack.io/#Commit451/InkPagerIndicator)
 
 # Gradle Dependency
 
@@ -21,7 +21,7 @@ allprojects {
 Then, add the library to your project `build.gradle`
 ```gradle
 dependencies {
-    compile 'com.github.Commit451:NativeStackBlur:1.0.5'
+    compile 'com.github.Commit451:InkPageIndicator:1.0.1'
 }
 ```
 
@@ -62,7 +62,8 @@ Special thanks to @nickbutcher for the original code and @hzsweers for backporti
 License
 --------
 
-    Copyright 2015 Google Inc., Commit 451
+    Copyright 2016 Commit 451
+    Copyright 2015 Google Inc.
 
     Licensed under the Apache License, Version 2.0 (the "License");
     you may not use this file except in compliance with the License.
