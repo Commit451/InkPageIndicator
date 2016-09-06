@@ -1,16 +1,27 @@
 # InkPageIndicator
-InkPageIndicator from Plaid https://github.com/nickbutcher/plaid. Works with API 19+ (4.4+)
+InkPageIndicator from [Plaid](https://github.com/nickbutcher/plaid). Works with API 19+ (4.4+)
 
 ![Sample Gif](http://fat.gfycat.com/JitteryGenuineFugu.gif)
 
 [![Build Status](https://travis-ci.org/Commit451/InkPageIndicator.svg?branch=master)](https://travis-ci.org/Commit451/InkPageIndicator)
 
 # Gradle Dependency
-Easily reference the library in your Android projects using this dependency in your module's `build.gradle` file:
 
-```Gradle
+Add this in your root `build.gradle` file (**not** your module `build.gradle` file):
+
+```gradle
+allprojects {
+	repositories {
+		...
+		maven { url "https://jitpack.io" }
+	}
+}
+```
+
+Then, add the library to your project `build.gradle`
+```gradle
 dependencies {
-    compile 'com.commit451:inkpageindicator:1.0.2'
+    compile 'com.github.Commit451:NativeStackBlur:1.0.5'
 }
 ```
 
