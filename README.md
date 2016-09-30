@@ -57,7 +57,7 @@ The library also supports styling in XML:
 # Contributions
 Please make pull requests as you see fit and log issues so that others can benefit from knowing the library and its issues. 
 
-Special thanks to @nickbutcher for the original code and @hzsweers for backporting it to 4.4+
+Special thanks to [@nickbutcher](https://github.com/nickbutcher) for the original code and [@hzsweers](https://github.com/hzsweers) for backporting it to 4.4+
 
 License
 --------
