@@ -652,7 +652,7 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     /**
      * A {@link ValueAnimator} that starts once a given predicate returns true.
      */
-    public abstract class PendingStartAnimator extends ValueAnimator {
+    abstract class PendingStartAnimator extends ValueAnimator {
 
         protected boolean hasStarted;
         protected StartPredicate predicate;
@@ -676,7 +676,7 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
      * selected pages.  This also sets up some pending dot reveals – to be started when the retreat
      * has passed the dot to be revealed.
      */
-    public class PendingRetreatAnimator extends PendingStartAnimator {
+    class PendingRetreatAnimator extends PendingStartAnimator {
 
         public PendingRetreatAnimator(int was, int now, int steps, StartPredicate predicate) {
             super(predicate);
@@ -768,7 +768,7 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     /**
      * An Animator that animates a given dot's revealFraction i.e. scales it up
      */
-    public class PendingRevealAnimator extends PendingStartAnimator {
+    class PendingRevealAnimator extends PendingStartAnimator {
 
         private int dot;
 
@@ -799,7 +799,7 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     /**
      * A predicate used to start an animation when a test passes
      */
-    public abstract class StartPredicate {
+    abstract class StartPredicate {
 
         protected float thresholdValue;
 
@@ -814,7 +814,7 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     /**
      * A predicate used to start an animation when a given value is greater than a threshold
      */
-    public class RightwardStartPredicate extends StartPredicate {
+    class RightwardStartPredicate extends StartPredicate {
 
         public RightwardStartPredicate(float thresholdValue) {
             super(thresholdValue);
@@ -828,7 +828,7 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     /**
      * A predicate used to start an animation then a given value is less than a threshold
      */
-    public class LeftwardStartPredicate extends StartPredicate {
+    class LeftwardStartPredicate extends StartPredicate {
 
         public LeftwardStartPredicate(float thresholdValue) {
             super(thresholdValue);
