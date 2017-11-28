@@ -1,5 +1,6 @@
 package com.commit451.inkpageindicatorsample;
 
+import android.support.annotation.NonNull;
 import android.support.v4.view.PagerAdapter;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -10,33 +11,34 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.List;
 
 /**
  * Simple PagerAdapter that shows images
- * Created by Jawn on 7/16/2015.
  */
 public class ImageAdapter extends PagerAdapter {
 
-    private ArrayList<String> mData = new ArrayList<>();
+    private List<String> data = new ArrayList<>();
 
-    public ImageAdapter(Collection<String> images) {
+    ImageAdapter(Collection<String> images) {
         setData(images);
     }
 
     public void setData(Collection<String> data) {
         if (data != null && !data.isEmpty()) {
-            mData.clear();
-            mData.addAll(data);
+            this.data.clear();
+            this.data.addAll(data);
             notifyDataSetChanged();
         }
     }
 
+    @NonNull
     @Override
-    public Object instantiateItem(ViewGroup collection, int position) {
+    public Object instantiateItem(@NonNull ViewGroup collection, int position) {
         View v = LayoutInflater.from(collection.getContext()).inflate(R.layout.item_image, collection, false);
-        ImageView imageView = (ImageView) v.findViewById(R.id.imageView);
+        ImageView imageView = v.findViewById(R.id.imageView);
         Glide.with(collection.getContext())
-                .load(mData.get(position))
+                .load(data.get(position))
                 .into(imageView);
 
         collection.addView(v, 0);
@@ -44,17 +46,35 @@ public class ImageAdapter extends PagerAdapter {
     }
 
     @Override
-    public void destroyItem(ViewGroup collection, int position, Object view) {
+    public void destroyItem(@NonNull ViewGroup collection, int position, @NonNull Object view) {
         collection.removeView((View) view);
     }
 
     @Override
     public int getCount() {
-        return mData.size();
+        return data.size();
     }
 
     @Override
-    public boolean isViewFromObject(View view, Object object) {
+    public boolean isViewFromObject(@NonNull View view, @NonNull Object object) {
         return view == object;
+    }
+
+    @Override
+    public int getItemPosition(@NonNull Object object) {
+        return PagerAdapter.POSITION_NONE;
+    }
+
+    public void add(String image) {
+        this.data.add(image);
+        notifyDataSetChanged();
+    }
+
+    public void removeLast() {
+        if (!data.isEmpty()) {
+            int index = data.size() - 1;
+            data.remove(index);
+            notifyDataSetChanged();
+        }
     }
 }

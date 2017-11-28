@@ -37,7 +37,7 @@ import android.view.animation.Interpolator;
 import java.util.Arrays;
 
 /**
- * An ink inspired widget for indicating pages in a {@link ViewPager}.
+ * An ink inspired widget for indicating pages in a {@link android.support.v4.view.ViewPager}.
  */
 public class InkPageIndicator extends View implements ViewPager.OnPageChangeListener,
         View.OnAttachStateChangeListener {
@@ -137,9 +137,9 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
         animDuration = (long) a.getInteger(R.styleable.InkPageIndicator_animationDuration,
                 DEFAULT_ANIM_DURATION);
         animHalfDuration = animDuration / 2;
-        unselectedColour = a.getColor( R.styleable.InkPageIndicator_pageIndicatorColor,
+        unselectedColour = a.getColor(R.styleable.InkPageIndicator_pageIndicatorColor,
                 DEFAULT_UNSELECTED_COLOUR);
-        selectedColour = a.getColor( R.styleable.InkPageIndicator_currentPageIndicatorColor,
+        selectedColour = a.getColor(R.styleable.InkPageIndicator_currentPageIndicatorColor,
                 DEFAULT_SELECTED_COLOUR);
 
         a.recycle();
@@ -212,7 +212,9 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
 
     private void setPageCount(int pages) {
         pageCount = pages;
-        resetState();
+        if (pages > 0) {
+            resetState();
+        }
         requestLayout();
     }
 
@@ -342,20 +344,19 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     }
 
     /**
-     *
      * Unselected dots can be in 6 states:
-     *
+     * <p>
      * #1 At rest
      * #2 Joining neighbour, still separate
      * #3 Joining neighbour, combined curved
      * #4 Joining neighbour, combined straight
      * #5 Join retreating
      * #6 Dot re-showing / revealing
-     *
+     * <p>
      * It can also be in a combination of these states e.g. joining one neighbour while
      * retreating from another.  We therefore create a Path so that we can examine each
      * dot pair separately and later take the union for these cases.
-     *
+     * <p>
      * This function returns a path for the given dot **and any action to it's right** e.g. joining
      * or retreating from it's neighbour
      *
@@ -639,8 +640,10 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
     }
 
     private void setDotRevealFraction(int dot, float fraction) {
-        dotRevealFractions[dot] = fraction;
-        ViewCompat.postInvalidateOnAnimation(this);
+        if (dot < dotRevealFractions.length) {
+            dotRevealFractions[dot] = fraction;
+            ViewCompat.postInvalidateOnAnimation(this);
+        }
     }
 
     private void cancelJoiningAnimations() {
@@ -749,12 +752,15 @@ public class InkPageIndicator extends View implements ViewPager.OnPageChangeList
                     clearJoiningFractions();
                     // we need to set this so that the dots are hidden until the reveal anim runs
                     for (int dot : dotsToHide) {
-                        setDotRevealFraction(dot, MINIMAL_REVEAL);
+                        if (dot < dotRevealFractions.length) {
+                            setDotRevealFraction(dot, MINIMAL_REVEAL);
+                        }
                     }
                     retreatingJoinX1 = initialX1;
                     retreatingJoinX2 = initialX2;
                     ViewCompat.postInvalidateOnAnimation(InkPageIndicator.this);
                 }
+
                 @Override
                 public void onAnimationEnd(Animator animation) {
                     retreatingJoinX1 = INVALID_FRACTION;

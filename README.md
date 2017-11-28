@@ -21,7 +21,7 @@ allprojects {
 Then, add the library to your project `build.gradle`
 ```gradle
 dependencies {
-    compile 'com.github.Commit451:InkPageIndicator:1.0.2'
+    implementation 'com.github.Commit451:InkPageIndicator:latest.release.here'
 }
 ```
 
@@ -36,7 +36,7 @@ See the sample app for a full example. Basic usage:
 ```
 
 ```java
-InkPageIndicator inkPageIndicator = (InkPageIndicator) findViewById(R.id.ink_pager_indicator);
+InkPageIndicator inkPageIndicator = findViewById(R.id.ink_pager_indicator);
 inkPageIndicator.setViewPager(viewPager);
 ```
 
