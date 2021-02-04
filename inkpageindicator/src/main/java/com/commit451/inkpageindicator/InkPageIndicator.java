@@ -27,9 +27,9 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
-import android.support.v4.view.ViewCompat;
-import android.support.v4.view.ViewPager;
-import android.support.v4.view.animation.FastOutSlowInInterpolator;
+import androidx.core.view.ViewCompat;
+import androidx.viewpager.widget.ViewPager;
+import androidx.interpolator.view.animation.FastOutSlowInInterpolator;
 import android.util.AttributeSet;
 import android.view.View;
 import android.view.animation.Interpolator;
@@ -37,7 +37,7 @@ import android.view.animation.Interpolator;
 import java.util.Arrays;
 
 /**
- * An ink inspired widget for indicating pages in a {@link android.support.v4.view.ViewPager}.
+ * An ink inspired widget for indicating pages in a {@link ViewPager}.
  */
 public class InkPageIndicator extends View implements ViewPager.OnPageChangeListener,
         View.OnAttachStateChangeListener {
