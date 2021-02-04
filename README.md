@@ -1,8 +1,6 @@
 # InkPageIndicator
 InkPageIndicator from [Plaid](https://github.com/nickbutcher/plaid). Works with API 19+ (4.4+)
 
-![Sample Gif](http://fat.gfycat.com/JitteryGenuineFugu.gif)
-
 [![Build Status](https://travis-ci.org/Commit451/InkPageIndicator.svg?branch=master)](https://travis-ci.org/Commit451/InkPageIndicator) [![](https://jitpack.io/v/Commit451/InkPageIndicator.svg)](https://jitpack.io/#Commit451/InkPageIndicator)
 
 # Gradle Dependency
